@@ -3,7 +3,7 @@ import { FaYoutube, FaUserCircle } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoIosSearch, IoIosNotificationsOutline } from "react-icons/io";
 import { MdMic } from "react-icons/md";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/sidebarSlice";
 
 const Header = () => {

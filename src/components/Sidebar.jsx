@@ -3,8 +3,9 @@ import { useSelector } from "react-redux";
 
 const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.sidebar.isMenuOpen);
+  if (!isMenuOpen) return;
   return (
-    <aside className={`px-4 w-2/12 sidebar ${!isMenuOpen && "hidden"}`}>
+    <aside className="px-4 w-2/12 sidebar">
       <ul className="sidebar-list">
         <li>Home</li>
         <li>Shorts</li>
