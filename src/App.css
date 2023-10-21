@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.sidebar .sidebar-list {
+  @apply border-b border-gray-300 py-4;
+}
+.sidebar li {
+  @apply text-lg p-2 hover:bg-gray-100 rounded-lg cursor-pointer;
+}
