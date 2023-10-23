@@ -5,6 +5,7 @@ import { IoIosSearch, IoIosNotificationsOutline } from "react-icons/io";
 import { MdMic } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/sidebarSlice";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -13,12 +14,13 @@ const Header = () => {
   };
 
   return (
-    <header className="py-3">
+    <header className="py-3 shadow">
       <div className="container mx-auto px-8 flex justify-between">
         <div className="flex items-center">
           <button onClick={handleMenu} className="text-xl text-gray-500">
             <RxHamburgerMenu />
           </button>
+
           <h3 className="flex ml-6 items-center">
             <FaYoutube className="text-2xl text-red-500" />
             <strong className="text-2xl font-semibold">YouTube</strong>

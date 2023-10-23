@@ -1,12 +1,12 @@
 import React from "react";
 import Sidebar from "./Sidebar";
-import VideoListWrapper from "./VideoListWrapper";
+import { Outlet } from "react-router-dom";
 
 const Body = () => {
   return (
     <main className="flex">
       <Sidebar />
-      <VideoListWrapper />
+      <Outlet />
     </main>
   );
 };
