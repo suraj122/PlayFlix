@@ -5,9 +5,9 @@ const VideoCard = ({ info }) => {
   const { thumbnails, channelTitle, title } = snippet;
   const { statistics } = info;
   return (
-    <article>
+    <article className="">
       <img className="w-full rounded-lg" src={thumbnails.high.url} alt="" />
-      <div className="mt-3">
+      <div className="mt-3 p-4">
         <h2 className="font-semibold">{title}</h2>
         <h3 className="text-sm text-gray-500 my-1 font-medium">
           {channelTitle}
@@ -18,6 +18,16 @@ const VideoCard = ({ info }) => {
       </div>
     </article>
   );
+};
+
+export const WithAdVideoCard = (Card) => {
+  return (props) => {
+    return (
+      <div className="border-2 shadow-md">
+        <Card {...props} />
+      </div>
+    );
+  };
 };
 
 export default VideoCard;
