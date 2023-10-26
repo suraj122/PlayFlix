@@ -2,7 +2,7 @@ import React from "react";
 
 const VideoPlayer = ({ id }) => {
   return (
-    <div className="w-8/12">
+    <div className="col-span-8">
       <iframe
         className="rounded-2xl"
         width="100%"

@@ -4,8 +4,8 @@ import { FaYoutube, FaUserCircle } from "react-icons/fa";
 const CommentList = ({ list }) => {
   return (
     <div>
-      {list.map((comment) => (
-        <Comment commentItems={comment} />
+      {list.map((comment, i) => (
+        <Comment key={i} commentItems={comment} />
       ))}
     </div>
   );

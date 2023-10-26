@@ -4,108 +4,8 @@ import { closeMenu } from "../utils/sidebarSlice";
 import { useSearchParams } from "react-router-dom";
 import VideoPlayer from "./VideoPlayer";
 import CommentList from "./CommentList";
-
-const commentList = [
-  {
-    name: "Akshay",
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ut? Qui quibusdam veniam doloribus tempore nam inventore",
-    replies: [
-      {
-        name: "Akshay",
-        comment:
-          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ut? Qui quibusdam veniam doloribus tempore nam inventore",
-        replies: [
-          {
-            name: "Akshay",
-            comment:
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ut? Qui quibusdam veniam doloribus tempore nam inventore",
-          },
-        ],
-      },
-      {
-        name: "Akshay",
-        comment:
-          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ut? Qui quibusdam veniam doloribus tempore nam inventore",
-      },
-      {
-        name: "Akshay",
-        comment:
-          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ut? Qui quibusdam veniam doloribus tempore nam inventore",
-        replies: [
-          {
-            name: "Akshay",
-            comment:
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ut? Qui quibusdam veniam doloribus tempore nam inventore",
-            replies: [
-              {
-                name: "Akshay",
-                comment:
-                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ut? Qui quibusdam veniam doloribus tempore nam inventore",
-              },
-              {
-                name: "Akshay",
-                comment:
-                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ut? Qui quibusdam veniam doloribus tempore nam inventore",
-                replies: [
-                  {
-                    name: "Akshay",
-                    comment:
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ut? Qui quibusdam veniam doloribus tempore nam inventore",
-                    replies: [
-                      {
-                        name: "Akshay",
-                        comment:
-                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ut? Qui quibusdam veniam doloribus tempore nam inventore",
-                      },
-                      {
-                        name: "Akshay",
-                        comment:
-                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ut? Qui quibusdam veniam doloribus tempore nam inventore",
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: "Punit",
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ut? Qui quibusdam veniam doloribus tempore nam inventore",
-    replies: [
-      {
-        name: "Akshay",
-        comment:
-          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ut? Qui quibusdam veniam doloribus tempore nam inventore",
-      },
-    ],
-  },
-  {
-    name: "Suraj",
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ut? Qui quibusdam veniam doloribus tempore nam inventore",
-  },
-  {
-    name: "Jai Pandeya",
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ut? Qui quibusdam veniam doloribus tempore nam inventore",
-  },
-  {
-    name: "Surjit",
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ut? Qui quibusdam veniam doloribus tempore nam inventore",
-  },
-  {
-    name: "Shubham",
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ut? Qui quibusdam veniam doloribus tempore nam inventore",
-  },
-];
+import commentList from "../help/commentList";
+import Chatbox from "./Chatbox";
 
 const Watchpage = () => {
   const dispatch = useDispatch();
@@ -117,8 +17,12 @@ const Watchpage = () => {
   }, []);
   return (
     <div className="container mx-auto px-16 py-12">
-      <VideoPlayer id={id} />
-      <div className="mt-6">
+      <div className="grid grid-cols-12 gap-3">
+        <VideoPlayer id={id} />
+        <Chatbox />
+      </div>
+
+      <div className="mt-6 w-8/12">
         <h3 className="text-xl font-bold">Comments:</h3>
         <CommentList list={commentList} />
       </div>
